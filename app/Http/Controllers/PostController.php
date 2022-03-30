@@ -47,7 +47,13 @@ class PostController extends Controller
 
     public function update(Request $request, Post $post)
     {
-        //save the edited post
+    //    return $request;
+        $post->update([
+            'title'=>$request->title,
+            'body'=>$request->body,
+        ]);
+        // return $post;
+        return back();
     }
 
 
